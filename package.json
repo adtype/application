@@ -35,12 +35,13 @@
   },
   "devDependencies": {
     "chai": "^2.2.0",
+    "flightplan": "^0.6.17",
     "mocha": "^2.2.4",
     "selenium-webdriver": "2.45.1"
   },
   "scripts": {
     "test": "node node_modules/mocha/bin/mocha --recursive t/*",
-    "start": "node bin/wwww",
+    "start": "node bin/www",
     "db-update": "node node_modules/.bin/sequelize db:migrate --config=config/db.json --models-path=lib/model/db/"
   }
 }
