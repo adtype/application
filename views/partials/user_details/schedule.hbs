@@ -5,14 +5,14 @@
   <input type="hidden" name="user_id" value="{{employee.id}}">
 
   <div class="form-group">
-    <label for="" class="control-label">Schedule</label>
+    <label for="" class="control-label">Calendario</label>
 
     <p class="help-block">
       {{# with schedule }}
       {{# if (is_user_specific) }}
-        Current employee has <strong data-vpp="declare-user-specific-schedule">custom</strong> schedule.
+        El empleado actualmente está usando un calendario <strong data-vpp="declare-user-specific-schedule">personalizado</strong>.
       {{else}}
-        Current employee uses <strong><a data-vpp="link-to-company-schedule" href="/settings/general/">company wide</a></strong> schedule.
+        El empleado actualmente está usando un calendario <strong><a data-vpp="link-to-company-schedule" href="/settings/general/">global de empresa</a></strong>.
       {{/if}}
       {{/with}}
     </p>

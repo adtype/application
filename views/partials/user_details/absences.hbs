@@ -13,27 +13,27 @@
 
 
   <div class="form-group">
-    <label for="days_remaining_inp" class="control-label">Days remaining</label>
+    <label for="days_remaining_inp" class="control-label">Días restantes</label>
     <div class="date">
-      <input class="form-control" id="days_remaining_inp" type="text" readonly value="{{#with employee}}{{ this.calculate_number_of_days_available_in_allowance}} out of {{this.calculate_total_number_of_days_n_allowance }}{{/with}}">
+      <input class="form-control" id="days_remaining_inp" type="text" readonly value="{{#with employee}}{{ this.calculate_number_of_days_available_in_allowance}} de un total de {{this.calculate_total_number_of_days_n_allowance }}{{/with}}">
     </div>
   </div>
 
   <div class="form-group">
-    <label for="adjustment_inp" class="control-label">Allowance adjustment</label>
+    <label for="adjustment_inp" class="control-label">Ajustes de días</label>
     <div class="input-group col-md-4">
       <input class="form-control" id="adjustment_inp" type="number" step="0.5" name="adjustment" value="{{#if employee.adjustment }}{{employee.adjustment}}{{else}}0{{/if}}" aria-describedby="adjustment_help">
-      <span class="input-group-addon">working days</span>
+      <span class="input-group-addon">días de trabajo</span>
     </div>
     <div id="adjustment_help" class="help-block">
-      <div>Tune allowance for this user</div>
-      <div>Could be negative as well.</div>
+      <div>Ajusta los días restantes para este usuario</div>
+      <div>También puede ser negativo.</div>
     </div>
   </div>
 
   <div class="form-group">
     <div class="col-md-12">
-      <button id="save_changes_btn" type="submit" class="btn btn-success pull-right">Save changes</button>
+      <button id="save_changes_btn" type="submit" class="btn btn-success pull-right">Guardar cambios</button>
     </div>
   </div>
   </form>

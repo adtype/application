@@ -1,7 +1,7 @@
-Leave request decision is made
+Petición de Ausencia Resuelta
 =====
-<p>Hello <strong>{{#with approver }}{{this.full_name}}{{/with}}</strong>,<p>
+<p>Hola <strong>{{#with approver }}{{this.full_name}}{{/with}}</strong>,<p>
 
-<p>You just processed {{#if was_pended_revoke}}cancellation of {{/if}}leave request {{>leave_request_detail leave=leave }} for {{#with requester}}{{this.full_name}}{{/with}}: to {{action}}.</p>
+<p>Acaba de procesar la {{#if was_pended_revoke}} cancelación de la {{/if}}petición de ausencia {{>leave_request_detail leave=leave }} para {{#with requester}}{{this.full_name}}{{/with}}: a {{action}}.</p>
 
-<p>Thanks</p>
+<p>Gracias</p>

@@ -1,20 +1,19 @@
 {
   "development": {
-    "dialect": "sqlite",
-    "storage": "./db.development.sqlite"
-  },
-  "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
+    "username": "timeoff",
+    "password": "vthijIW4fVUefHCl",
+    "database": "timeoff_management",
     "host": "127.0.0.1",
+    "port": "3306",
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
+    "username": "timeoff",
+    "password": "vthijIW4fVUefHCl",
+    "database": "timeoff_management",
     "host": "127.0.0.1",
+    "port": "3306",
     "dialect": "mysql"
+
   }
 }

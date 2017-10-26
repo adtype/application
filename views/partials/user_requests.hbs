@@ -1,14 +1,14 @@
 
 {{# unless no_header}}
 <div class="row main-row_header">
-  <p class="col-md-12">All absences</p>
+  <p class="col-md-12">Todas las ausencias</p>
 </div>
 {{/ unless}}
 
 <div class="row">
   {{# unless leaves}}
   <div class="col-md-12 text-muted">
-    There are no leave requests yet.
+    No hay peticiones de ausencias todavía.
   </div>
   {{else}}
 
@@ -18,12 +18,12 @@
     <table class="table table-hover user-requests-table">
       <thead>
         <tr>
-          <th>Type</th>
-          <th>Deducted</th>
-          <th>Dates</th>
-          <th>Approved by</th>
+          <th>Tipo</th>
+          <th>Deducido</th>
+          <th>Fechas</th>
+          <th>Aprobado por</th>
           <th></th>
-          <th><span class="pull-right">Status</span></th>
+          <th><span class="pull-right">Estado</span></th>
         </tr>
       </thead>
 
@@ -40,19 +40,19 @@
           {{# unless this.is_pended_revoke_leave}}
           <form method="post" action="/requests/revoke/">
             <input type="hidden" value="{{this.id}}" name="request">
-            <button type="submit" class="pull-right btn btn-default btn-xs revoke-btn" title="Revoke leave request. Subject of approval."><i class="fa fa-trash"> Revoke</i></button>
+            <button type="submit" class="pull-right btn btn-default btn-xs revoke-btn" title="Revoke leave request. Subject of approval."><i class="fa fa-trash"> Rechazar</i></button>
           </form>
           {{/unless}}
           {{else}}
             {{#if_equal this.userId ../logged_user.id }}
             <form method="post" action='/requests/cancel/'>
               <input type="hidden" value="{{this.id}}" name="request">
-              <button type="submit" class="pull-right btn btn-default btn-xs revoke-btn" title="Cancel leave request" value="cancel"><i class="fa fa-trash"> Cancel</i></button>
+              <button type="submit" class="pull-right btn btn-default btn-xs revoke-btn" title="Cancel leave request" value="cancel"><i class="fa fa-trash"> Cancelar</i></button>
             </form>
             {{/if_equal}}
           {{/if}}
         </td>
-        <td><span class="pull-right leave-request-row-status">{{#if this.is_new_leave }}Pending{{else}}{{#if this.is_approved_leave}}Approved{{else}}Rejected{{/if}}{{/if}}</span></td>
+        <td><span class="pull-right leave-request-row-status">{{#if this.is_new_leave }}Pendiente{{else}}{{#if this.is_approved_leave}}Aprobado{{else}}Rechazado{{/if}}{{/if}}</span></td>
       </tr>
 
       {{/ each }}

@@ -1,18 +1,18 @@
 
 {{> header }}
 
-<h1>{{logged_user.name}} {{logged_user.lastname}} messages</h1>
+<!-- <h1>Mensajes de {{logged_user.name}} {{logged_user.lastname}}</h1> -->
 
 {{> show_flash_messages }}
 
 <div class="row main-row_header">
-  <p class="col-md-12">Leave request to approve</p>
+  <p class="col-md-12">Peticiones de ausencia para aprobar</p>
 </div>
 
 <div class="row">
   {{# unless to_be_approved_leaves}}
   <div class="col-md-12 text-muted">
-    There are no leave request to decide on.
+    No hay peticiones de ausencias para administrar.
   </div>
   {{else}}
   <div class="col-md-12">
@@ -21,12 +21,12 @@
     <table class="table table-hover">
       <thead>
         <tr>
-          <th>Employee</th>
-          <th>Department</th>
-          <th>Date of request</th>
-          <th>Leave dates</th>
-          <th>Type</th>
-          <th>Days</th>
+          <th>Empleado</th>
+          <th>Departamento</th>
+          <th>Fecha de petición</th>
+          <th>Fecha de ausencia</th>
+          <th>Tipo</th>
+          <th>Días</th>
           <th colspan="2"></th>
         </tr>
       </thead>

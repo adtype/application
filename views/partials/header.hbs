@@ -10,21 +10,21 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{{url_to_the_site_root}}">TimeOff.Management</a>
+      <a class="navbar-brand" href="{{url_to_the_site_root}}">Gestión de Ausencias - AdType</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-left">
         {{# if logged_user }}
-          <li><a href="/calendar/">Calendar</a></li>
-          <li class="hidden-xs"><a href="/calendar/teamview/">Team View</a></li>
+          <li><a href="/calendar/">Calendario</a></li>
+          <li class="hidden-xs"><a href="/calendar/teamview/">Vista por equipo</a></li>
           {{# if logged_user.admin }}
-            <li class="hidden-xs"><a href="/users/">Employees</a></li>
+            <li class="hidden-xs"><a href="/users/">Empleados</a></li>
           {{/if}}
           <li class="navbar-form navbar-left">
             <div class="form-group">
-              <button type="button" class="btn btn-info" data-toggle="modal" data-target="#book_leave_modal" id="book_time_off_btn">New absence</button>
+              <button type="button" class="btn btn-info" data-toggle="modal" data-target="#book_leave_modal" id="book_time_off_btn">Nueva ausencia</button>
             </div>
           </li>
         {{/if}}
@@ -37,24 +37,24 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="fa fa-gears"></span> <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
                 <li><a href="/settings/general/">General</a></li>
-                <li><a href="/settings/departments/">Departments</a></li>
-                <li><a href="/settings/company/authentication/">LDAP configuration</a></li>
-                <li><a href="/audit/email/">Emails audit</a></li>
+                <li><a href="/settings/departments/">Departamentos</a></li>
+                <!-- <li><a href="/settings/company/authentication/">LDAP configuration</a></li> -->
+                <li><a href="/audit/email/">Auditoria Correos</a></li>
               </ul>
             </li>
             {{/if}}
-            <li class="visible-xs-block"><a href="/requests/">Requests</a></li>
-            <li class="visible-xs-block"><a href="/logout/">Logout</a></li>
+            <li class="visible-xs-block"><a href="/requests/">Peticiones ausencia</a></li>
+            <li class="visible-xs-block"><a href="/logout/">Cerrar sesión</a></li>
             <li class="dropdown hidden-xs">
-              <a id="me_menu" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Me <span class="caret"></span></a>
+              <a id="me_menu" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{logged_user.name}} <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="/requests/">Requests</a></li>
-                <li class="hidden-xs"><a href="/calendar/feeds/">Feeds</a></li>
-                <li><a href="/logout/">Logout</a></li>
+                <li><a href="/requests/">Peticiones ausencia</a></li>
+                <!-- <li class="hidden-xs"><a href="/calendar/feeds/">Feeds</a></li> -->
+                <li><a href="/logout/">Cerrar sesión</a></li>
               </ul>
             </li>
           {{else}}
-            <li><a href="/login/">Login</a></li>
+            <li><a href="/login/">Iniciar sesión</a></li>
           {{/if}}
         </li>
       </ul>
@@ -63,5 +63,3 @@
 </nav>
 
 </div>
-
-

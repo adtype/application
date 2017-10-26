@@ -1,10 +1,10 @@
 
 {{> header }}
 
-<h1>Employee calendar</h1>
+<h1>Calendario de empleado</h1>
 
 <div class="row">
-    <div class="col-md-6 lead">{{logged_user.name}} {{logged_user.lastname}}'s calendar for {{this_year}}</div>
+    <div class="col-md-6 lead">Calendario de {{logged_user.name}} {{logged_user.lastname}} para {{this_year}}</div>
     <div class="col-md-6">
     </div>
 </div>
@@ -14,7 +14,7 @@
 <div class="row">&nbsp;</div>
 
 <div class="row main-row_header hidden-xs">
-  <div class="col-md-12">Statistics</div>
+  <div class="col-md-12">Estadísticas</div>
 </div>
 
 <div class="row">
@@ -23,8 +23,8 @@
     <dl>
       {{#with current_user }}
       <dt>{{ this.calculate_number_of_days_available_in_allowance ../this_year }}</dt>
-      <dd>Days remaining</dd>
-      <dd>out of {{this.calculate_total_number_of_days_n_allowance ../this_year}} in Allowance</dd>
+      <dd>Días Restantes</dd>
+      <dd>de un total de {{this.calculate_total_number_of_days_n_allowance ../this_year}}</dd>
       {{/with}}
     </dl>
   </div>
@@ -32,34 +32,34 @@
 
   <div class="col-md-3 secondary-leave-type-statistics hidden-xs">
     <dl>
-      <dt>Used so far</dt>
+      <dt>Usados a día de hoy</dt>
 
       {{# if leave_type_statistics }}
         {{# each leave_type_statistics }}
-          <dd><em>{{this.leave_type.name}}:</em> <span class="pull-right">{{this.days_taken}}{{# if this.limit}} out of {{this.limit}}{{/if}}</span></dd>
+          <dd><em>{{this.leave_type.name}}:</em> <span class="pull-right">{{this.days_taken}}{{# if this.limit}} de {{this.limit}} días{{/if}}</span></dd>
         {{/each}}
       {{else}}
 
-        <dd class="text-muted">No approved requests so far.</dd>
+        <dd class="text-muted">No hay peticiones aprobadas todavía.</dd>
       {{/if}}
     </dl>
   </div>
 
   <div class="col-md-3 secondary-leave-type-statistics hidden-xs">
     <dl>
-      <dt>Available types</dt>
+      <dt>Tipos de ausencias</dt>
         {{~# each full_leave_type_statistics ~}}
-          <dd>{{this.leave_type.name ~}}{{~# if this.limit }} (up to {{this.limit}} days){{~/if}} </dd>
+          <dd>{{this.leave_type.name ~}}{{~# if this.limit }} (max {{this.limit}} días){{~/if}} </dd>
         {{~/ each}}
     </dl>
   </div>
 
   <div class="col-md-3 secondary-leave-type-statistics hidden-xs">
     <dl>
-      <dt>Details</dt>
-      <dd><em>Superviser:</em><span class="pull-right"><a href="mailto:{{superviser.email}}">{{# with superviser }}{{ this.full_name }}{{/with}}</a></span></dd>
-      <dd><em>Department:</em> <span class="pull-right"><a href="/calendar/teamview/?department={{ current_user.department.id }}">{{ current_user.department.name }}</a></span></dd>
-      <dd><em>Allowance in {{this_year}}:</em><span class="pull-right"> {{#with current_user}}{{ this.calculate_total_number_of_days_n_allowance ../this_year }}{{/with}} days</span><dd>
+      <dt>Detalles</dt>
+      <dd><em>Responsable:</em><span class="pull-right"><a href="mailto:{{superviser.email}}">{{# with superviser }}{{ this.full_name }}{{/with}}</a></span></dd>
+      <dd><em>Departamento:</em> <span class="pull-right"><a href="/calendar/teamview/?department={{ current_user.department.id }}">{{ current_user.department.name }}</a></span></dd>
+      <dd><em>Vacaciones en {{this_year}}:</em><span class="pull-right"> {{#with current_user}}{{ this.calculate_total_number_of_days_n_allowance ../this_year }}{{/with}} días</span><dd>
     </dl>
   </div>
 
@@ -70,7 +70,7 @@
 
 
 <div class="row main-row_header">
-  <div class="col-md-12">Calendar <a href="/calendar/feeds/" data-toggle="tooltip" data-placement="right" title="Export absences  to external calendars"><span class="fa fa-rss"></span></a></div>
+  <div class="col-md-12">Calendario <a href="/calendar/feeds/" data-toggle="tooltip" data-placement="right" title="Export absences  to external calendars"><span class="fa fa-rss"></span></a></div>
 </div>
 
 <div class="row">
@@ -81,13 +81,13 @@
   </div>
   <div class="col-md-8 calendar-section-caption">
 
-    <strong>{{#if show_full_year}}January - December {{current_year}}{{else}}Upcoming Months{{/if}}</strong>
+    <strong>{{#if show_full_year}}Enero - Diciembre {{current_year}}{{else}}Próximos meses{{/if}}</strong>
     &nbsp;
 
     {{# unless show_full_year}}
-    <a class="btn btn-default" href="/calendar/?show_full_year=1">More... &nbsp;<span class="fa fa-plus"></span></a>
+    <a class="btn btn-default" href="/calendar/?show_full_year=1">Más... &nbsp;<span class="fa fa-plus"></span></a>
     {{else}}
-    <a class="btn btn-default" href="/calendar/">Less... &nbsp;<span class="fa fa-minus"></span></a>
+    <a class="btn btn-default" href="/calendar/">Menos... &nbsp;<span class="fa fa-minus"></span></a>
     {{/unless}}
 
 
